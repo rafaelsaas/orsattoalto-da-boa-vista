@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loteamento Alto da Boa Vista II - Videira/SC</title>
+    <meta name="description" content="Loteamento Alto da Boa Vista II em Videira/SC - Terrenos a partir de 300m². Realize o sonho da casa própria!">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Reset e configurações gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #FF6B00;
+            --primary-dark: #E55A00;
+            --primary-light: #FF8C33;
+            --primary-transparent: rgba(255, 107, 0, 0.1);
+            --secondary: #1A1A1A;
+            --accent: #2E7D32;
+            --light: #F8F8F8;
+            --white: #FFFFFF;
+            --gray: #E0E0E0;
+            --text: #333333;
+            --text-light: #666666;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --shadow-heavy: 0 8px 24px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s ease;
+            --border-radius: 12px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(255, 107, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .btn:hover::before {
+            width: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(255, 107, 0, 0.4);
+        }
+
+        .btn-large {
+            padding: 16px 32px;
+            font-size: 1.1rem;
+        }
+
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            box-shadow: 0 6px 18px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Header e Navegação */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo img {
+            height: 45px;
+            transition: var(--transition);
+        }
+
+        nav {
+            display: none;
+        }
+
+        /* Banner Hero */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('https://orsattoimoveisvideira.com.br/wp-content/uploads/2025/11/DJI_0108-scaled.jpg') center/cover no-repeat;
+            color: var(--white);
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 107, 0, 0.2), transparent);
+            z-index: 0;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero .roman {
+            font-size: 3rem;
+            color: #FFD700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 2rem;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            letter-spacing: 1px;
+            animation: pulse 2s infinite;
+        }
+
+        /* Sobre o Loteamento */
+        .about {
+            background-color: var(--white);
+        }
+
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .about-text {
+            order: 2;
+        }
+
+        .about-image {
+            order: 1;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.8s ease;
+        }
+
+        .about-image.animated {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .about-feature {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transform: translateX(-20px);
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+
+        .about-feature.animated {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .about-feature:nth-child(2) {
+            transition-delay: 0.1s;
+        }
+
+        .about-feature:nth-child(3) {
+            transition-delay: 0.2s;
+        }
+
+        .about-feature:nth-child(4) {
+            transition-delay: 0.3s;
+        }
+
+        .about-feature i {
+            font-size: 1.5rem;
+            color: var(--primary);
+            background: var(--primary-transparent);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: var(--transition);
+        }
+
+        .about-feature:hover i {
+            transform: scale(1.1) rotate(5deg);
+            background: var(--primary);
+            color: white;
+        }
+
+        .dream-home {
+            background: linear-gradient(135deg, var(--primary-transparent), rgba(46, 125, 50, 0.1));
+            padding: 30px;
+            border-radius: var(--border-radius);
+            margin-top: 30px;
+            text-align: center;
+            border-left: 5px solid var(--primary);
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.8s ease;
+        }
+
+        .dream-home.animated {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .dream-home h3 {
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+        }
+
+        /* Vantagens */
+        .features {
+            background-color: var(--light);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        .feature-card {
+            background-color: var(--white);
+            padding: 30px 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+            transform: translateY(30px);
+            opacity: 0;
+        }
+
+        .feature-card.animated {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: inline-block;
+            background: var(--primary-transparent);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(5deg);
+            background: var(--primary);
+            color: white;
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        /* Galeria */
+        .gallery {
+            background-color: var(--white);
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 250px;
+            transform: scale(0.9);
+            opacity: 0;
+            transition: all 0.6s ease;
+        }
+
+        .gallery-item.animated {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            color: white;
+            padding: 20px;
+            transform: translateY(10px);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Localização */
+        .location {
+            background: linear-gradient(135deg, var(--secondary), #2a2a2a);
+            color: var(--white);
+        }
+
+        .location h2 {
+            color: var(--white);
+        }
+
+        .location h2::after {
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        .location-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .location-map {
+            width: 100%;
+            height: 300px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.8s ease;
+        }
+
+        .location-map.animated {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .location-map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .location-points {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .location-point {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transform: translateX(-20px);
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+
+        .location-point.animated {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .location-point:nth-child(2) {
+            transition-delay: 0.1s;
+        }
+
+        .location-point:nth-child(3) {
+            transition-delay: 0.2s;
+        }
+
+        .location-icon {
+            font-size: 1.8rem;
+            color: var(--primary);
+            background: rgba(255, 107, 0, 0.2);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: var(--transition);
+        }
+
+        .location-point:hover .location-icon {
+            transform: scale(1.1);
+            background: var(--primary);
+            color: white;
+        }
+
+        .location-point h3 {
+            color: var(--white);
+            margin-bottom: 5px;
+        }
+
+        .location-point p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+            text-align: center;
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.8s ease;
+        }
+
+        .cta-content.animated {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .cta h2 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .cta h2::after {
+            background: var(--white);
+        }
+
+        .cta p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .cta .btn {
+            background: var(--white);
+            color: var(--primary);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta .btn:hover {
+            background: var(--light);
+            color: var(--primary-dark);
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            z-index: 100;
+            transition: var(--transition);
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-float i {
+            font-size: 1.8rem;
+            color: var(--white);
+        }
+
+        /* Rodapé */
+        footer {
+            background: linear-gradient(135deg, var(--secondary), #0a0a0a);
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo img {
+            height: 60px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 20px;
+        }
+
+        .footer-links h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            color: var(--white);
+        }
+
+        .footer-links h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-links a i {
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Animações */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 107, 0, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(255, 107, 0, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 107, 0, 0);
+            }
+        }
+
+        /* Media Queries para tablets */
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+
+            h2 {
+                font-size: 2.2rem;
+            }
+
+            section {
+                padding: 80px 0;
+            }
+
+            .hero {
+                padding: 140px 0 100px;
+            }
+
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+
+            .hero .roman {
+                font-size: 3.8rem;
+            }
+
+            .hero-buttons {
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .about-content {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .about-text {
+                order: 1;
+                flex: 1;
+            }
+
+            .about-image {
+                order: 2;
+                flex: 1;
+            }
+
+            .about-features {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .gallery-container {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .location-points {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .footer-content {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .footer-logo {
+                flex: 1;
+            }
+
+            .footer-links {
+                flex: 1;
+            }
+        }
+
+        /* Media Queries para desktop */
+        @media (min-width: 992px) {
+            .features-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+
+            .gallery-container {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+
+            .location-points {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="https://orsattoimoveisvideira.com.br/wp-content/uploads/2025/11/Casa-bairro-Carelli-CTA-6.png" alt="Orsatto Imóveis">
+            </div>
+            <nav>
+                <!-- Menu removido para mobile conforme solicitado -->
+            </nav>
+        </div>
+    </header>
+
+    <!-- Banner Hero -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-badge">LANÇAMENTO EXCLUSIVO</div>
+            <h1>Loteamento Alto da Boa Vista <span class="roman">II</span></h1>
+            <p>Sua próxima conquista merece conforto e uma localização privilegiada em Videira - SC</p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/554932026885?text=Olá,%20gostaria%20de%20mais%20informações%20sobre%20o%20Loteamento%20Alto%20da%20Boa%20Vista%20II" class="btn btn-large btn-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp" style="margin-right: 10px;"></i> Falar com Corretor
+                </a>
+                <a href="#sobre" class="btn btn-large btn-outline">Conhecer o Loteamento</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre o Loteamento -->
+    <section class="about" id="sobre">
+        <div class="container">
+            <div class="section-subtitle">Seu espaço, seu futuro</div>
+            <h2 class="section-title">Conheça o Loteamento</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>O <strong>Loteamento Alto da Boa Vista <span class="roman">II</span></strong> é a <strong>oportunidade perfeita</strong> para você que sonha em construir sua casa do jeito que sempre imaginou. Com <strong>lotes a partir de 300m²</strong>, você tem espaço de sobra para criar o lar dos seus sonhos.</p>
+                    
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <i class="fas fa-home"></i>
+                            <div>
+                                <h4>303 Lotes Disponíveis</h4>
+                                <p>Terrenos a partir de 300m²</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-percentage"></i>
+                            <div>
+                                <h4>Condições Acessíveis</h4>
+                                <p>30% de entrada + 60 parcelas</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-road"></i>
+                            <div>
+                                <h4>Infraestrutura Completa</h4>
+                                <p>Pavimentação, esgoto e iluminação</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-file-contract"></i>
+                            <div>
+                                <h4>Documentação Regular</h4>
+                                <p>Matrículas liberadas e seguras</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="dream-home">
+                        <h3>Moradia Perfeita pra Você e sua Família</h3>
+                        <p>Mais do que um endereço, oferecemos um estilo de vida. Com infraestrutura completa e localização privilegiada para proporcionar conforto e segurança.</p>
+                        <a href="https://wa.me/554932026885?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20as%20condições%20para%20comprar%20um%20lote%20no%20Alto%20da%20Boa%20Vista%20II" class="btn" target="_blank">
+                            <i class="fas fa-home" style="margin-right: 10px;"></i> Quero Meu Lote
+                        </a>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://orsattoimoveisvideira.com.br/wp-content/uploads/2025/11/DJI_0123-scaled.jpg" alt="Vista aérea do loteamento">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vantagens -->
+    <section class="features" id="vantagens">
+        <div class="container">
+            <div class="section-subtitle">Por que escolher o Alto da Boa Vista II</div>
+            <h2 class="section-title">Vantagens para Você</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3>Localização Perfeita</h3>
+                    <p>Próximo a mercados, escolas, farmácias e com fácil acesso ao centro. Tudo que sua família precisa por perto.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Tudo Pronto</h3>
+                    <p>Infraestrutura completa: ruas pavimentadas, esgoto, iluminação e redes de água. Você só precisa construir.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3>Pagamento Acessível</h3>
+                    <p>Condições que cabem no seu bolso: 30% de entrada e o restante em até 60 vezes. Realize seu sonho agora.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria -->
+    <section class="gallery" id="galeria">
+        <div class="container">
+            <div class="section-subtitle">Conheça o local</div>
+            <h2 class="section-title">Fotos do Loteamento</h2>
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="https://orsattoimoveisvideira.com.br/wp-content/uploads/2025/11/DJI_0108-scaled.jpg" alt="Vista aérea completa do loteamento">
+                    <div class="gallery-overlay">
+                        <h3>Vista Aérea</h3>
+                        <p>Organização urbana completa</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://orsattoimoveisvideira.com.br/wp-content/uploads/2025/11/DJI_0123-scaled.jpg" alt="Detalhe das ruas e lotes">
+                    <div class="gallery-overlay">
+                        <h3>Ruas e Lotes</h3>
+                        <p>Organização e espaços bem definidos</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://orsattoimoveisvideira.com.br/wp-content/uploads/2025/11/DJI_0116-scaled.jpg" alt="Área verde e entorno">
+                    <div class="gallery-overlay">
+                        <h3>Área Verde</h3>
+                        <p>Ambiente agradável e arborizado</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Localização -->
+    <section class="location" id="localizacao">
+        <div class="container">
+            <div class="section-subtitle">Tudo perto de você</div>
+            <h2 class="section-title">Localização Privilegiada</h2>
+            <div class="location-content">
+                <div class="location-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3550.745609403921!2d-51.15455648495729!3d-27.00894498301919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94e14f8652f8d4a5%3A0x6a2a1d5c1a3b3b3b!2sVideira%2C%20SC!5e0!3m2!1spt-BR!2sbr!4v1646756789016!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <div class="location-points">
+                    <div class="location-point">
+                        <div class="location-icon">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <div>
+                            <h3>200 metros</h3>
+                            <p>do mercado do bairro</p>
+                        </div>
+                    </div>
+                    <div class="location-point">
+                        <div class="location-icon">
+                            <i class="fas fa-school"></i>
+                        </div>
+                        <div>
+                            <h3>600 metros</h3>
+                            <p>do CEMEI em construção</p>
+                        </div>
+                    </div>
+                    <div class="location-point">
+                        <div class="location-icon">
+                            <i class="fas fa-road"></i>
+                        </div>
+                        <div>
+                            <h3>750 metros</h3>
+                            <p>da rodovia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="contato">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Agende sua visita!</h2>
+                <p>Talvez essa seja a oportunidade perfeita para comprar seu terreno agora. Lotes com ótimas condições de pagamento.</p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/554932026885?text=Olá,%20gostaria%20de%20agendar%20uma%20visita%20ao%20Loteamento%20Alto%20da%20Boa%20Vista%20II" class="btn btn-large" target="_blank">
+                        <i class="fab fa-whatsapp" style="margin-right: 10px;"></i> Agendar Visita
+                    </a>
+                    <a href="tel:+554932026885" class="btn btn-large btn-outline">
+                        <i class="fas fa-phone" style="margin-right: 10px;"></i> Ligar Agora
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Botão Flutuante do WhatsApp -->
+    <a href="https://wa.me/554932026885?text=Olá,%20gostaria%20de%20mais%20informações%20sobre%20o%20Loteamento%20Alto%20da%20Boa%20Vista%20II" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="https://orsattoimoveisvideira.com.br/wp-content/uploads/2025/11/Casa-bairro-Carelli-CTA-5.png" alt="Orsatto Imóveis">
+                    <p>Move com exclusividade e sofisticação em um dos melhores bairros de Videira.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/554932026885" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li><a href="https://wa.me/554932026885" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                        <li><a href="tel:+554932026885"><i class="fas fa-phone"></i> (49) 3202-6885</a></li>
+                        <li><a href="mailto:contato@orsattoimoveis.com.br"><i class="fas fa-envelope"></i> E-mail</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Videira - SC</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Orsatto Imóveis - Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animação ao rolar a página
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.about-image, .about-feature, .dream-home, .feature-card, .gallery-item, .location-map, .location-point, .cta-content');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('animated');
+                }
+            });
+        }
+
+        // Verificar elementos na carga inicial
+        window.addEventListener('load', animateOnScroll);
+        
+        // Verificar elementos durante o scroll
+        window.addEventListener('scroll', animateOnScroll);
+
+        // Header fixo com efeito de transparência ao rolar
+        const header = document.querySelector('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
+                document.querySelector('.logo img').style.height = '40px';
+            } else {
+                header.style.backgroundColor = 'var(--white)';
+                header.style.boxShadow = 'var(--shadow)';
+                document.querySelector('.logo img').style.height = '45px';
+            }
+        });
+    </script>
+</body>
+</html>
